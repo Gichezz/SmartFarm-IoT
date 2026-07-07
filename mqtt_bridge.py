@@ -15,6 +15,10 @@ MQTT_PORT     = int(os.getenv("MQTT_PORT", 1883))
 MQTT_TOPIC    = os.getenv("MQTT_TOPIC", "Group6_SmartFarm")
 MQTT_CLIENT   = "smartfarm-bridge"
 
+MQTT_USERNAME = os.getenv("MQTT_USERNAME")
+MQTT_PASSWORD = os.getenv("MQTT_PASSWORD")
+MQTT_CA_CERT  = os.getenv("MQTT_CA_CERT")
+
 FIREBASE_URL  = os.getenv("FIREBASE_URL")   
 FIREBASE_AUTH = os.getenv("FIREBASE_AUTH")  
 
