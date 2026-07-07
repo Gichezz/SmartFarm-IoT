@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "author": "SmartFarm Group 6",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-v1", "id": "esp32", "top": 160.48, "left": 235.2, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht22",
+      "top": 20,
+      "left": 80,
+      "attrs": { "temperature": "28", "humidity": "65" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr",
+      "top": 22.4,
+      "left": 298.4,
+      "attrs": { "lux": "350" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "soil",
+      "top": 20,
+      "left": 520,
+      "attrs": { "label": "Soil Moisture", "value": "0.45" }
+    },
+    {
+      "type": "wokwi-ssd1306",
+      "id": "oled",
+      "top": 380,
+      "left": 80,
+      "attrs": { "i2cAddress": "0x3c" }
+    }
+  ],
+  "connections": [
+    [ "esp32:3V3", "dht22:VCC", "red", [] ],
+    [ "esp32:GND.1", "dht22:GND", "black", [] ],
+    [ "esp32:D4", "dht22:SDA", "green", [] ],
+    [ "esp32:3V3", "ldr:VCC", "red", [] ],
+    [ "esp32:GND.1", "ldr:GND", "black", [] ],
+    [ "esp32:D33", "ldr:AO", "yellow", [] ],
+    [ "esp32:3V3", "soil:VCC", "red", [] ],
+    [ "esp32:GND.2", "soil:GND", "black", [] ],
+    [ "esp32:D34", "soil:SIG", "orange", [] ],
+    [ "esp32:3V3", "oled:VCC", "red", [] ],
+    [ "esp32:GND.2", "oled:GND", "black", [] ],
+    [ "esp32:D21", "oled:SDA", "blue", [] ],
+    [ "esp32:D22", "oled:SCL", "purple", [] ]
+  ],
+  "dependencies": {}
+}

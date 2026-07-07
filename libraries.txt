@@ -1,0 +1,7 @@
+# SmartFarm IoT — Wokwi library dependencies
+
+DHT sensor library
+Adafruit GFX Library
+Adafruit SSD1306
+PubSubClient
+ArduinoJson
