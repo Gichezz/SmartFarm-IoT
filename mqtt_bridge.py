@@ -162,6 +162,15 @@ def main():
     client.on_disconnect = on_disconnect
     client.on_message    = on_message
 
+    client = mqtt.Client(client_id=MQTT_CLIENT, clean_session=True)
+
+    client.username_pw_set(
+    MQTT_USERNAME,
+    MQTT_PASSWORD
+    )
+
+    client.tls_set(ca_certs=MQTT_CA_CERT)
+
     # Reconnect settings — keeps bridge alive if broker drops
     client.reconnect_delay_set(min_delay=2, max_delay=30)
 
